@@ -1,0 +1,108 @@
+<head>
+	<link rel="shortcut icon" href="favicons.png" type="image/png">
+    <title>register @ s4yn3x.tk/</title>
+    <link rel="stylesheet" href="app.css">
+    <style>
+        .toast {
+            background: black;
+            box-shadow: none !important;
+        }
+
+        .toast-error {
+            border: 1px solid red;
+        }
+
+        .toast-success {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        if (location.href.indexOf("?") != -1) {
+            toastr.error(location.href.substring(location.href.indexOf("?") + 1, location.href.length).split("_").join(" ").split("=")[0]);
+        }
+    </script>
+    <div class="main">
+        <a href="index.htm">main page</a>
+        <form method="post">
+            <input type="text" placeholder="username" name="u">
+            <input type="password" placeholder="password" name="p">
+            <input type="text" placeholder="invite code" name="k">
+            <input type="submit" value="submit">
+        </form>
+    </div>
+</body>
+
+<script language="JavaScript">
+
+
+//////////F12 disable code////////////////////////
+    document.onkeypress = function (event) {
+        event = (event || window.event);
+        if (event.keyCode == 123) {
+           //alert('No F-12');
+            return false;
+        }
+    }
+    document.onmousedown = function (event) {
+        event = (event || window.event);
+        if (event.keyCode == 123) {
+            //alert('No F-keys');
+            return false;
+        }
+    }
+document.onkeydown = function (event) {
+        event = (event || window.event);
+        if (event.keyCode == 123) {
+            //alert('No F-keys');
+            return false;
+        }
+    }
+
+function clickIE() {if (document.all) {(message);return false;}} 
+function clickNS(e) {if 
+(document.layers||(document.getElementById&&!document.all)) { 
+if (e.which==2||e.which==3) {(message);return false;}}} 
+if (document.layers) 
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;} 
+else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;} 
+document.oncontextmenu=new Function("return false") 
+
+function disableCtrlKeyCombination(e)
+{
+
+var forbiddenKeys = new Array('a', 'n', 'c', 'x', 'v', 'j' , 'w');
+var key;
+var isCtrl;
+if(window.event)
+{
+key = window.event.keyCode;     
+if(window.event.ctrlKey)
+isCtrl = true;
+else
+isCtrl = false;
+}
+else
+{
+key = e.which;     
+if(e.ctrlKey)
+isCtrl = true;
+else
+isCtrl = false;
+}
+if(isCtrl)
+{
+for(i=0; i<forbiddenKeys.length; i++)
+{
+if(forbiddenKeys[i].toLowerCase() == String.fromCharCode(key).toLowerCase())
+{
+alert('Key combination CTRL + '+String.fromCharCode(key) +' has been disabled.');
+return false;
+}
+}
+}
+return true;
+}
+</script>
